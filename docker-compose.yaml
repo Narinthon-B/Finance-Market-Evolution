@@ -1,0 +1,36 @@
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000" # API
+      - "9001:9001" # UI (Console)
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
+    command: server /data --console-address ":9001"
+
+  airflow:
+    image: apache/airflow:2.10.0
+    depends_on:
+      - postgres
+      - minio
+    command: >
+      bash -c "pip install yfinance &&
+      airflow db init &&
+      airflow users create --username airflow --password airflow --firstname Bam --lastname Tanwiboon --role Admin --email admin@example.com;
+      airflow scheduler & airflow webserver"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
