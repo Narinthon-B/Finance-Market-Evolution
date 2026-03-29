@@ -40,11 +40,11 @@
     -   ตรวจสอบสถานะการทำงานผ่าน Airflow Grid View (สีเขียว = สำเร็จ, สีชมพู = วันหยุด)
   
       
-  ![Airflow](https://github.com/user-attachments/assets/47b8646e-d3af-42bf-a15b-7172ea4f41c4)
+      ![Airflow](https://github.com/user-attachments/assets/47b8646e-d3af-42bf-a15b-7172ea4f41c4)
    
 
         
--    ดูไฟล์ที่ถูกจัดเก็บจริงผ่าน **MinIO Console** (localhost:9001)
+    -    ดูไฟล์ที่ถูกจัดเก็บจริงผ่าน **MinIO Console** (localhost:9001)
 
 
-  ![miniO](https://github.com/user-attachments/assets/aa2b96be-459b-436f-8742-95abb6643f8f)
+      ![miniO](https://github.com/user-attachments/assets/aa2b96be-459b-436f-8742-95abb6643f8f)
