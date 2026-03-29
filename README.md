@@ -44,7 +44,7 @@
    
 
         
-    -   ดูไฟล์ที่ถูกจัดเก็บจริงผ่าน **MinIO Console** (localhost:9001)
+-    ดูไฟล์ที่ถูกจัดเก็บจริงผ่าน **MinIO Console** (localhost:9001)
 
 
   ![miniO](https://github.com/user-attachments/assets/aa2b96be-459b-436f-8742-95abb6643f8f)
